@@ -1,0 +1,29 @@
+﻿@model IEnumerable<JoiaModel>
+
+<table class="table table-striped table-dark">
+<thead>
+<tr>
+
+<th scope="col">Tipo</th>
+<th scope="col">Material</th>
+<th scope="col">Peso</th>
+<th scope="col">Valor</th>
+</tr>
+</thead>
+<tbody>
+		@if(Model!=null ){
+			@foreach (var joia in Model)
+			{
+
+				<tr>
+
+
+					<th scope="row">@joia.Tipo</th>
+					<td>@joia.Material</td>
+					<td>@joia.Peso</td>
+					<td>@joia.Valor</td>
+				</tr>
+			}
+		}
+			</tbody>
+</table>

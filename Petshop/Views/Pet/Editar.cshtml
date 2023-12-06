@@ -1,0 +1,43 @@
+﻿@model PetModel
+@{
+    ViewData["title"] = "Editar Pet";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Editar Pet</h1>
+    </div>
+    <form method="post" asp-controller="Pet" asp-action="Editar">
+        <input type="hidden" asp-for="Id" />
+
+        <h2 class="text-light">Tem certeza que deseja editar?</h2>
+
+        <div class="form-group">
+            <label for="Nome" class="text-light">Nome: </label>
+            <input type="text" class="form-control" asp-for="Nome" id="Nome" aria-describedby="Nome" placeholder="Nome" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
+        </div>
+        <div class="form-group">
+            <label for="Raca" class-"text-light"> Raca </label>
+            <input type="text" class="form-control" asp-for="Raca" id="Raca" placeholder="Qual a Raca?" />
+            <span class="text-danger" asp-validation-for="Raca"></span>
+        </div>
+        <div class="form-group">
+            <label for="Especie" class="text-light">Especie</label>
+            <input type="text" class="form-control" asp-for="Especie" id="Especie" placeholder="Qual a Especie?" />
+            <span class="text-danger" asp-validation-for="Especie"></span>
+        </div>
+        <div class="form-group">
+            <label for="Peso" class="text-light"> Peso</label>
+            <input type="text" class="form-control" asp-for="Peso" id="Peso" placeholder="Qual o Peso?" />
+            <span class="text-danger" asp-validation-for="Peso"></span>
+        </div>
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-success w-50">Enviar</button>
+            <a class="btn btn-primary w-50" asp-controller="Pet" asp-action="Index"> Voltar</a>
+
+        </div>
+
+    </form>
+
+</div>

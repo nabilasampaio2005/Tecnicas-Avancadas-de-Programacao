@@ -1,0 +1,38 @@
+﻿@model CadastroanimalModel
+@{
+    ViewData["title"] = "Editar o cadastro do Animal"; // muda o titulo da pagina
+}
+
+<div class="container bg-dark p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Editar cadastro do Animal</h1>
+    </div>
+    <form method="post" asp-controller="Cadastro" asp-action="Editar">
+        <input type="hidden" asp-for="Id"/>
+        <div class="form-group">
+            <label for="NomeDono" class="text-light">Nome do Dono</label>
+            <input type="text" class="form-control" asp-for="NomeDono" id="" aria-describedby="emailHelp" placeholder="Qual o nome do Dono?" />
+            <span class="text-danger" asp-validation-for="NomeDono"></span>
+        </div>
+        <div class="form-group">
+            <label for="NomeAnimal" class="text-light">Nome do Animal</label>
+            <input type="text" class="form-control" asp-for="NomeAnimal" id="NomeAnimal" placeholder="Qual o nome do Animal?" />
+            <span class="text-danger" asp-validation-for="NomeAnimal"></span>
+        </div>
+        <div class="form-group">
+            <label for="RacaAnimal" class="text-light">Raça do Animal</label>
+            <input type="text" class="form-control" asp-for="RacaAnimal" id="RacaAnimal" placeholder="Qual a raça do Animal?" />
+            <span class="text-danger" asp-validation-for="RacaAnimal"></span>
+        </div>
+        <div class="form-group">
+            <label for="NomeFuncionario" class="text-light">Nome do Funcionário</label>
+            <input type="text" class="form-control" asp-for="NomeFuncionario" id="Livro" placeholder="Qual é o Funcionário responsável?" />
+            <span class="text-danger" asp-validation-for="NomeFuncionario"></span>
+        </div>
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-success w-50">Editar</button>
+            <a class="btn btn-primary w-50" asp-controller="Cadastro" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+</div>

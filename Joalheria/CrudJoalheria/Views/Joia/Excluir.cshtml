@@ -1,0 +1,44 @@
+﻿@model JoiaModel
+@{
+    ViewData["title"] = "Excluir Joia";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Excluir Joia</h1>
+    </div>
+    <form method="post" asp-controller="Joia" asp-action="Excluir">
+        <input type="hidden" asp-for="Id" />
+
+        <h2 class="text-light">Tem certeza que deseja excluir?</h2>
+        <div class="form-group">
+            <label for="Tipo" class="text-light">Tipo Joia</label>
+            <input type="text" class="form-control" asp-for="Tipo" disabled id="Tipo" aria-describedby="Tipo" placeholder="Tipo da joia" />
+            <span class="text-danger" asp-validation-for="Tipo"></span>
+        </div>
+        <div class="form-group">
+            <label for="Material" class="text-light">Material</label>
+            <input type="text" class="form-control" asp-for="Material" disabled id="Material" placeholder="Qual o material da joia" />
+            <span class="text-danger" asp-validation-for="Material"></span>
+        </div>
+        <div class="form-group">
+            <label for="Peso" class="text-light">Peso</label>
+            <input type="text" class="form-control" asp-for="Peso" disabled id="Peso" placeholder="Qual o peso da joia">
+            <span class="text-danger" asp-validation-for="Material"></span>
+        </div>
+        <div class="form-group">
+            <label for="Valor" class="text-light"> Valor</label>
+            <input type="text" class="form-control" asp-for="Valor" disabled id="Valor" placeholder="Qual o valor da joia">
+            <span class="text-danger" asp-validation-for="Valor"></span>
+
+        </div>
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-success w-50">Enviar</button>
+            <a class="btn btn-primary w-50" asp-controller="Joia" asp-action="Index"> Voltar</a>
+           
+
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PetModel>
+
+<div class="container">
+
+	<div class="d-flex justify-content-between align-items-center mb-5">
+
+		<h1>Pet</h1>
+
+		<a class="btn btn-success mx-2" asp-controller="Pet" asp-action="Cadastrar">Cadastrar novo Pet</a>
+	</div>
+
+	<table class="table table-striped table-dark">
+		<thead>
+			<tr>
+
+				<th scope="col">Nome</th>
+				<th scope="col">Raca</th>
+				<th scope="col">Especie</th>
+				<th scope="col">Peso</th>
+			</tr>
+		</thead>
+		<tbody>
+			@if (Model != null)
+			{
+				@foreach (var pet in Model)
+				{
+
+					<tr>
+						<th scope="row">@pet.Nome</th>
+						<td>@pet.Raca</td>
+						<td>@pet.Especie</td>
+						<td>@pet.Peso</td>
+
+						<td>
+							<a asp-controller="pet" asp-action="Editar" asp-route-id="@pet.Id" class="btn btn-warning mx-2">Editar</a>
+							<a asp-controller="pet" asp-action="Excluir" asp-route-id="@pet.Id" class="btn btn-danger mx-2">Excluir</a>
+						</td>
+					</tr>
+				}
+			}
+		</tbody>
+	</table>
+
+</div>

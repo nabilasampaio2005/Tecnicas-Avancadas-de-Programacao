@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CadastroanimalModel>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+        <h1>Cadastro</h1>
+        <a class="btn btn-success mx-2" asp-asp-controller="Cadastro" asp-action="Cadastrar">Cadastrar Animal</a>
+        </div>
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Nome do Dono</th>
+            <th scope="col">Nome do Animal</th>
+            <th scope="col">Raça do Animal</th>
+            <th scope="col">Nome do Funcionario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null)
+        {
+            @foreach(var cadastro in Model)
+            {
+                <tr>
+                    <th scope="row">@cadastro.NomeDono</th>
+                    <td>@cadastro.NomeAnimal</td>
+                    <td>@cadastro.RacaAnimal</td>
+                    <td>@cadastro.NomeFuncionario</td>
+                        <td>
+                            <a asp-controller="Cadastro" asp-action="Editar" asp-route-id="@cadastro.Id" class="btn btn-warning mx-2">Editar</a>
+                            <a asp-controller="Cadastro" asp-action="Excluir" asp-route-id="@cadastro.Id" class="btn btn-warning mx-2">Excluir</a>
+                        </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+</div>
